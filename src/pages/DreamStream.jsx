@@ -67,11 +67,7 @@ const DreamStream = () => {
             <div style={{ gridColumn: 'span 12', marginTop: '2rem' }}>
                 <h4 style={{ marginBottom: '1rem', color: '#888' }}>A sneak peek inside Oculus</h4>
                 <div style={{ width: '100%', aspectRatio: '16/9', background: '#111', borderRadius: '8px', overflow: 'hidden' }}>
-                    <video
-                        src="/Speculative AI/b348af1eccf14cb5bc71801eb5893248.mov"
-                        controls
-                        style={{ width: '100%', height: '100%' }}
-                    />
+                    <VimeoVideo videoId="1146518309" />
                 </div>
             </div>
 

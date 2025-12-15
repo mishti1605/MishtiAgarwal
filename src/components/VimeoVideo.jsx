@@ -20,7 +20,7 @@ const VimeoVideo = ({ videoId, ...props }) => {
                     setIsPlaying(false)
                 }
             },
-            { threshold: 0.5 }
+            { threshold: 0.1, rootMargin: '200px' }
         )
 
         if (containerRef.current) {
