@@ -69,6 +69,7 @@ const Hero = () => {
                     }}
                 >
                     <motion.h1
+                        className="hero-title"
                         style={{
                             fontSize: 'clamp(3rem, 8vw, 8rem)',
                             display: 'flex',
