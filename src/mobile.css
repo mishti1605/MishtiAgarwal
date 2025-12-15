@@ -101,6 +101,15 @@
     /* Prevent edge touching */
   }
 
+  /* Target the absolute positioned text container in ProjectCard */
+  div[style*="position: absolute"] {
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
   .ui-container {
     padding: 1rem !important;
     text-align: center !important;
@@ -118,6 +127,15 @@
   .project-grid>div>div {
     width: 100% !important;
     box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  /* Reset box sizing globally for safety */
+  * {
+    box-sizing: border-box;
   }
 }
 
