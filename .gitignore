@@ -1,0 +1,34 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Large video files (host these separately)
+public/Shortfilms/*.MP4
+public/Shortfilms/*.MOV
+public/Shortfilms/*.mp4
+public/Shortfilms/*.mov
+public/Speculative AI/*.mp4
+public/Speculative AI/*.MP4
+public/Speculative AI/*.MOV
+public/Speculative AI/*.mov
