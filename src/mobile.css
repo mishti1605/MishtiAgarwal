@@ -1,14 +1,15 @@
 /* Mobile Optimization */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+
   /* Typography Scale */
   html {
     font-size: 14px;
   }
-  
+
   h1 {
     font-size: 3rem !important;
   }
-  
+
   h3 {
     font-size: 1.5rem !important;
   }
@@ -22,15 +23,19 @@
   }
 
   /* Override inline styles for grid spans */
-  .project-grid > div {
+  .project-grid>div {
     grid-column: span 1 !important;
     width: 100% !important;
     margin-bottom: 2rem !important;
   }
 
   /* Navigation */
-  .desktop-nav {
+  .desktop-links {
     display: none !important;
+  }
+
+  nav {
+    padding: 1.5rem 1.5rem !important;
   }
 
   .mobile-nav-toggle {
@@ -39,7 +44,7 @@
     top: 20px;
     right: 20px;
     z-index: 1001;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0, 0, 0, 0.8);
     border: 1px solid #333;
     padding: 10px;
     border-radius: 5px;
@@ -75,12 +80,14 @@
   main {
     padding: 6rem 1rem 2rem !important;
   }
-  
+
   /* Hero adjustments */
   .ui-container h1 {
-     font-size: 3rem !important;
-     flex-direction: column;
-     gap: 1rem;
+    font-size: 3rem !important;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center !important;
+    /* Fix alignment */
   }
 }
 

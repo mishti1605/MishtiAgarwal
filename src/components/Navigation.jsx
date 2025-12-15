@@ -15,7 +15,7 @@ const Navigation = () => {
     return (
         <>
             {/* Desktop / Persistent Nav */}
-            <nav className="desktop-nav" style={{
+            <nav style={{
                 position: 'fixed',
                 top: 0,
                 left: 0,
@@ -36,14 +36,15 @@ const Navigation = () => {
                         textDecoration: 'none',
                         textTransform: 'uppercase',
                         fontWeight: 'bold',
-                        letterSpacing: '1px'
+                        letterSpacing: '1px',
+                        zIndex: 1002 // Ensure logo is above mobile menu or accessible
                     }}
                 >
                     Mishti Agarwal
                 </Link>
 
                 {/* Menu items on the right */}
-                <div style={{ display: 'flex', gap: '3rem' }}>
+                <div className="desktop-links" style={{ display: 'flex', gap: '3rem' }}>
                     {links.map((link) => (
                         <Link
                             key={link.name}
