@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import ProjectLayout from '../components/ProjectLayout'
-import SmartVideo from '../components/SmartVideo'
+import VimeoVideo from '../components/VimeoVideo'
 
 const DreamStream = () => {
     const [selectedImage, setSelectedImage] = useState(null)
@@ -14,11 +14,7 @@ const DreamStream = () => {
         >
             <div style={{ gridColumn: 'span 12' }}>
                 <div style={{ width: '100%', aspectRatio: '16/9', background: '#000', borderRadius: '8px', overflow: 'hidden' }}>
-                    <SmartVideo
-                        src="/Speculative AI/DREAMSTREAM.MOV.mp4"
-                        poster="/Speculative AI/dream stream Poster 2.jpeg"
-                        style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-                    />
+                    <VimeoVideo videoId="1146506040" />
                 </div>
             </div>
 

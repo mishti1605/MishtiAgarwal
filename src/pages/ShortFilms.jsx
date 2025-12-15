@@ -1,11 +1,11 @@
 import ProjectLayout from '../components/ProjectLayout'
-import SmartVideo from '../components/SmartVideo'
+import VimeoVideo from '../components/VimeoVideo'
 
 const ShortFilms = () => {
     const films = [
-        { title: "CHHAAP", src: "/Shortfilms/Your paragraph text 2.mp4", genre: "Narrative", year: "2025" },
-        { title: "The Elephant In the Room", src: "/Shortfilms/video-output-CB9AA856-175B-41C0-92CE-9B9BFEC37F3B-1.MP4", genre: "Storytelling", year: "2025" },
-        { title: "JAAGO", src: "/Shortfilms/video-output-F419A660-6F40-437B-80B0-C3D81E404BF9-1.MOV", genre: "Experimental", year: "2025" }
+        { title: "CHHAAP", vimeoId: null, genre: "Narrative", year: "2025", note: "Upload pending" },
+        { title: "The Elephant In the Room", vimeoId: "1146505662", genre: "Storytelling", year: "2025" },
+        { title: "JAAGO", vimeoId: "1146506522", genre: "Experimental", year: "2025" }
     ]
 
     return (
@@ -24,10 +24,20 @@ const ShortFilms = () => {
                         overflow: 'hidden',
                         border: '1px solid #333'
                     }}>
-                        <SmartVideo
-                            src={film.src}
-                            style={{ width: '100%', height: '100%' }}
-                        />
+                        {film.vimeoId ? (
+                            <VimeoVideo videoId={film.vimeoId} />
+                        ) : (
+                            <div style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                height: '100%',
+                                color: '#666',
+                                fontSize: '1.2rem'
+                            }}>
+                                {film.note || 'Video coming soon'}
+                            </div>
+                        )}
                     </div>
                     <div style={{ marginTop: '1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
                         <h3 style={{ fontSize: '2rem', margin: 0 }}>{film.title}</h3>
