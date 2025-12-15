@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 
 const Navigation = () => {
@@ -15,7 +15,7 @@ const Navigation = () => {
     return (
         <>
             {/* Desktop / Persistent Nav */}
-            <nav style={{
+            <nav className="desktop-nav" style={{
                 position: 'fixed',
                 top: 0,
                 left: 0,
@@ -75,6 +75,34 @@ const Navigation = () => {
                     ))}
                 </div>
             </nav>
+
+            {/* Mobile Navigation */}
+            <div className="mobile-nav-toggle" onClick={() => setIsOpen(!isOpen)}>
+                {isOpen ? '✕' : '☰'}
+            </div>
+
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        className="mobile-nav-menu"
+                        initial={{ opacity: 0, x: '100%' }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: '100%' }}
+                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    >
+                        {links.map((link) => (
+                            <Link
+                                key={link.name}
+                                to={link.path}
+                                onClick={() => setIsOpen(false)}
+                                style={{ color: location.pathname === link.path ? '#8a0000' : '#fff' }}
+                            >
+                                {link.name}
+                            </Link>
+                        ))}
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </>
     )
 }
