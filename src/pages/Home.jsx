@@ -1,3 +1,5 @@
+import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import Hero from '../components/Hero'
 import Navigation from '../components/Navigation'
 import ProjectCarousel from '../components/ProjectCarousel'
@@ -42,6 +44,17 @@ const projects = [
 ]
 
 const Home = () => {
+    const location = useLocation()
+
+    // When navigated here via "View All Projects", scroll to the carousel section
+    useEffect(() => {
+        if (location.state?.scrollToProjects) {
+            const el = document.getElementById('projects')
+            if (el) {
+                el.scrollIntoView({ behavior: 'smooth' })
+            }
+        }
+    }, [location.state])
     return (
         <main>
             <Navigation />

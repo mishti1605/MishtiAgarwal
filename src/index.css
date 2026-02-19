@@ -99,12 +99,12 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 40px 96px;
+  padding: 0 40px 140px;
 }
 
 .carousel-label {
   font-family: var(--font-heading);
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #f0ede8;

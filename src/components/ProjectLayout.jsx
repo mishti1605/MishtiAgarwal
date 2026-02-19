@@ -16,7 +16,7 @@ const ProjectLayout = ({ title, category, description, children }) => {
 
             {/* Fixed 3D Background Layer for Projects */}
             <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, pointerEvents: 'none', opacity: 0.5 }}>
-                <Canvas camera={{ position: [0, 0, 5] }}>
+                <Canvas camera={{ position: [0, 0, 5] }} style={{ pointerEvents: 'none' }}>
                     <ambientLight intensity={0.5} />
                     <pointLight position={[10, 10, 10]} />
                     <ScrollScene />

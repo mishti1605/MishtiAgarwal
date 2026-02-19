@@ -76,7 +76,7 @@ const ProjectCarousel = ({ projects }) => {
 
             {/* ── Section header ───────────────────────────── */}
             <div className="carousel-header">
-                <span className="carousel-label">Selected Work</span>
+                <span className="carousel-label">Projects</span>
                 <div className="carousel-nav">
                     <button
                         className="carousel-nav-btn"
@@ -110,7 +110,18 @@ const ProjectCarousel = ({ projects }) => {
                             key={project.link}
                             className={`carousel-card${isCenter ? ' carousel-card--active' : ''}`}
                             animate={{ x, scale, rotate, opacity }}
-                            transition={SPRING}
+                            whileHover={isCenter ? { scale: 1.03 } : undefined}
+                            transition={{
+                                ...SPRING,
+                                // hover scale: smooth tween, zero bounce, zero drift
+                                ...(isCenter && {
+                                    scale: {
+                                        type: 'tween',
+                                        duration: 0.35,
+                                        ease: [0.25, 0.46, 0.45, 0.94],
+                                    },
+                                }),
+                            }}
                             style={{ zIndex, pointerEvents }}
                             onClick={() => handleCardClick(idx)}
                             role={isCenter ? 'link' : 'button'}

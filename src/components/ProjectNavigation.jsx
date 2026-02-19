@@ -47,15 +47,7 @@ const ProjectNavigation = () => {
 
                 {/* View All */}
                 <div
-                    onClick={() => {
-                        navigate('/');
-                        setTimeout(() => {
-                            const element = document.getElementById('projects');
-                            if (element) {
-                                element.scrollIntoView({ behavior: 'smooth' });
-                            }
-                        }, 100);
-                    }}
+                    onClick={() => navigate('/', { state: { scrollToProjects: true } })}
                     style={{
                         cursor: 'pointer',
                         padding: '1rem 2rem',
