@@ -1,50 +1,45 @@
 import { useNavigate } from 'react-router-dom'
-import { motion } from 'framer-motion'
 
-const ProjectCard = ({ title, category, image, link, className }) => {
+const ProjectCard = ({ title, category, image, link, size = 'medium' }) => {
     const navigate = useNavigate()
 
+    // Aspect ratios by size variant
+    const aspectRatios = {
+        large: '62%',   // ~16:10
+        medium: '70%',   // ~4:3
+        small: '80%',   // taller portrait
+    }
+
+    const paddingTop = aspectRatios[size] || aspectRatios.medium
+
     return (
-        <motion.div
-            className={className}
+        <div
+            className="project-card"
             onClick={() => navigate(link)}
-            whileHover={{ scale: 0.98 }}
-            style={{
-                cursor: 'pointer',
-                position: 'relative',
-                height: '400px',
-                background: '#1a1a1a',
-                overflow: 'hidden',
-                borderRadius: '4px'
-            }}
+            style={{ cursor: 'pointer' }}
         >
-            {/* Image Placeholder */}
-            <div style={{ width: '100%', aspectRatio: '4/3', overflow: 'hidden', background: '#222', borderRadius: '4px', marginBottom: '1rem', position: 'relative' }}>
+            {/* Thumbnail */}
+            <div
+                className="project-card__thumb"
+                style={{ paddingTop }}
+            >
                 {image ? (
-                    <img src={image} alt={title} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s' }} />
+                    <img
+                        src={image}
+                        alt={title}
+                        className="project-card__img"
+                    />
                 ) : (
-                    <div style={{
-                        width: '100%',
-                        height: '100%',
-                        background: 'linear-gradient(45deg, #1a1a1a, #333)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        color: '#444',
-                        fontSize: '2rem',
-                        fontWeight: 'bold',
-                        textTransform: 'uppercase'
-                    }}>
-                        {title[0]}
-                    </div>
+                    <div className="project-card__placeholder" />
                 )}
             </div>
 
-            <div style={{ position: 'absolute', bottom: 0, left: 0, padding: '2rem', width: '100%', background: 'linear-gradient(to top, rgba(0,0,0,0.9), transparent)' }}>
-                <span style={{ color: '#8a0000', textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '1px' }}>{category}</span>
-                <h3 style={{ fontSize: '1.5rem', marginTop: '0.5rem' }}>{title}</h3>
+            {/* Label row */}
+            <div className="project-card__label">
+                <span className="project-card__category">{category}</span>
+                <h3 className="project-card__title">{title}</h3>
             </div>
-        </motion.div>
+        </div>
     )
 }
 

@@ -27,29 +27,50 @@ const Publication = () => {
                 </p>
             </div>
 
-            {/* Masonry Grid */}
-            <div style={{ gridColumn: 'span 12', columns: '2 400px', gap: '20px' }}>
-                {images.map((img, index) => (
-                    <div
-                        key={index}
-                        onClick={() => setSelectedImage(`/Publication Design/${img}`)}
-                        style={{
-                            marginBottom: '20px',
-                            breakInside: 'avoid',
-                            borderRadius: '4px',
-                            overflow: 'hidden',
-                            cursor: 'zoom-in'
-                        }}
-                    >
+            {/* 1. Large Image */}
+            <div style={{ gridColumn: 'span 12', marginBottom: '8rem' }} onClick={() => setSelectedImage('/Publication Design/book stack.png')}>
+                <motion.div whileHover={{ scale: 1.02 }} transition={{ duration: 0.5 }} style={{ width: '100%', cursor: 'zoom-in', borderRadius: '4px', overflow: 'hidden' }}>
+                    <img
+                        src="/Publication Design/book stack.png"
+                        alt="Book Stack"
+                        style={{ width: '100%', display: 'block' }}
+                    />
+                </motion.div>
+            </div>
+
+            {/* 2. Row of 3 Images */}
+            {['Horizontal_Book_Mockup_2.jpg', 'Horizontal_Book_Mockup_3.jpg', 'Horizontal_Book_Mockup_4.jpg'].map((img) => (
+                <div key={img} style={{ gridColumn: 'span 4', marginBottom: '3rem' }} onClick={() => setSelectedImage(`/Publication Design/${img}`)}>
+                    <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.5 }} style={{ width: '100%', height: '100%', cursor: 'zoom-in', borderRadius: '4px', overflow: 'hidden' }}>
                         <img
                             src={`/Publication Design/${img}`}
-                            alt={`Publication Shot ${index}`}
-                            style={{ width: '100%', display: 'block', transition: 'transform 0.3s' }}
-                            onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.02)'}
-                            onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                            alt={img}
+                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                         />
-                    </div>
-                ))}
+                    </motion.div>
+                </div>
+            ))}
+
+            {/* 3. Large Image */}
+            <div style={{ gridColumn: 'span 12', marginTop: '6rem', marginBottom: '8rem' }} onClick={() => setSelectedImage('/Publication Design/Horizontal_Book_Mockup_5.jpg')}>
+                <motion.div whileHover={{ scale: 1.02 }} transition={{ duration: 0.5 }} style={{ width: '100%', cursor: 'zoom-in', borderRadius: '4px', overflow: 'hidden' }}>
+                    <img
+                        src="/Publication Design/Horizontal_Book_Mockup_5.jpg"
+                        alt="Mockup 5"
+                        style={{ width: '100%', display: 'block' }}
+                    />
+                </motion.div>
+            </div>
+
+            {/* 4. Large Image */}
+            <div style={{ gridColumn: 'span 12', marginTop: '6rem', marginBottom: '8rem' }} onClick={() => setSelectedImage('/Publication Design/Horizontal_Book_Mockup_7.jpg')}>
+                <motion.div whileHover={{ scale: 1.02 }} transition={{ duration: 0.5 }} style={{ width: '100%', cursor: 'zoom-in', borderRadius: '4px', overflow: 'hidden' }}>
+                    <img
+                        src="/Publication Design/Horizontal_Book_Mockup_7.jpg"
+                        alt="Mockup 7"
+                        style={{ width: '100%', display: 'block' }}
+                    />
+                </motion.div>
             </div>
 
             {/* Lightbox Modal */}

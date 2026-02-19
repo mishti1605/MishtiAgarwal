@@ -11,7 +11,104 @@ const UIUX = () => {
             category="UI/UX · App Design"
             description="Mindora is a gentle wellness app designed to help people feel grounded, emotionally safe, and motivated in everyday life. Instead of overwhelming users with data or rigid routines, Mindora begins with what already brings comfort — happy memories. Its key USP, the Smart Memory Gallery, surfaces meaningful personal photos the moment a user opens the app, instantly anchoring them in positivity and familiarity. Alongside this, Mindora supports emotional balance through simple daily wellness tracking (sleep, water, movement), a calming journal, vision boards for goals and manifestation, and an Emotional SOS mode that offers immediate grounding when things feel overwhelming."
         >
-            <div style={{ gridColumn: 'span 12', textAlign: 'center', padding: '4rem', background: '#1a1a1a', borderRadius: '8px' }}>
+            {/* 1. Large Image */}
+            <div style={{ gridColumn: 'span 12', marginBottom: '8rem' }} onClick={() => setSelectedImage('/UI UX/Yellow and Pink Gradient Simple Abstract Mobile Apps Presentation/1.png')}>
+                <motion.div whileHover={{ scale: 1.02 }} transition={{ duration: 0.5 }} style={{ width: '100%', cursor: 'zoom-in', borderRadius: '4px', overflow: 'hidden' }}>
+                    <img
+                        src="/UI UX/Yellow and Pink Gradient Simple Abstract Mobile Apps Presentation/1.png"
+                        alt="Screen 1"
+                        style={{ width: '100%', display: 'block' }}
+                    />
+                </motion.div>
+            </div>
+
+            {/* 2. Row of 3 Images */}
+            {[2, 3, 4].map((num) => (
+                <div key={num} style={{ gridColumn: 'span 4', marginBottom: '3rem' }} onClick={() => setSelectedImage(`/UI UX/Yellow and Pink Gradient Simple Abstract Mobile Apps Presentation/${num}.png`)}>
+                    <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.5 }} style={{ width: '100%', height: '100%', cursor: 'zoom-in', borderRadius: '4px', overflow: 'hidden' }}>
+                        <img
+                            src={`/UI UX/Yellow and Pink Gradient Simple Abstract Mobile Apps Presentation/${num}.png`}
+                            alt={`Screen ${num}`}
+                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                        />
+                    </motion.div>
+                </div>
+            ))}
+
+            {/* 3. Large Image */}
+            <div style={{ gridColumn: 'span 12', marginTop: '6rem', marginBottom: '8rem' }} onClick={() => setSelectedImage('/UI UX/Yellow and Pink Gradient Simple Abstract Mobile Apps Presentation/5.png')}>
+                <motion.div whileHover={{ scale: 1.02 }} transition={{ duration: 0.5 }} style={{ width: '100%', cursor: 'zoom-in', borderRadius: '4px', overflow: 'hidden' }}>
+                    <img
+                        src="/UI UX/Yellow and Pink Gradient Simple Abstract Mobile Apps Presentation/5.png"
+                        alt="Screen 5"
+                        style={{ width: '100%', display: 'block' }}
+                    />
+                </motion.div>
+            </div>
+
+            {/* 4. Row of 2 Images */}
+            {[6, 7].map((num) => (
+                <div key={num} style={{ gridColumn: 'span 6', marginBottom: '3rem' }} onClick={() => setSelectedImage(`/UI UX/Yellow and Pink Gradient Simple Abstract Mobile Apps Presentation/${num}.png`)}>
+                    <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.5 }} style={{ width: '100%', height: '100%', cursor: 'zoom-in', borderRadius: '4px', overflow: 'hidden' }}>
+                        <img
+                            src={`/UI UX/Yellow and Pink Gradient Simple Abstract Mobile Apps Presentation/${num}.png`}
+                            alt={`Screen ${num}`}
+                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                        />
+                    </motion.div>
+                </div>
+            ))}
+
+            {/* 5. Large Image */}
+            <div style={{ gridColumn: 'span 12', marginTop: '6rem', marginBottom: '8rem' }} onClick={() => setSelectedImage('/UI UX/Yellow and Pink Gradient Simple Abstract Mobile Apps Presentation/8.png')}>
+                <motion.div whileHover={{ scale: 1.02 }} transition={{ duration: 0.5 }} style={{ width: '100%', cursor: 'zoom-in', borderRadius: '4px', overflow: 'hidden' }}>
+                    <img
+                        src="/UI UX/Yellow and Pink Gradient Simple Abstract Mobile Apps Presentation/8.png"
+                        alt="Screen 8"
+                        style={{ width: '100%', display: 'block' }}
+                    />
+                </motion.div>
+            </div>
+
+            {/* 6. Row of 3 Images */}
+            {[9, 10, 11].map((num) => (
+                <div key={num} style={{ gridColumn: 'span 4', marginBottom: '3rem' }} onClick={() => setSelectedImage(`/UI UX/Yellow and Pink Gradient Simple Abstract Mobile Apps Presentation/${num}.png`)}>
+                    <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.5 }} style={{ width: '100%', height: '100%', cursor: 'zoom-in', borderRadius: '4px', overflow: 'hidden' }}>
+                        <img
+                            src={`/UI UX/Yellow and Pink Gradient Simple Abstract Mobile Apps Presentation/${num}.png`}
+                            alt={`Screen ${num}`}
+                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                        />
+                    </motion.div>
+                </div>
+            ))}
+
+            {/* 7. Large Image */}
+            <div style={{ gridColumn: 'span 12', marginTop: '6rem', marginBottom: '8rem' }} onClick={() => setSelectedImage('/UI UX/Yellow and Pink Gradient Simple Abstract Mobile Apps Presentation/12.png')}>
+                <motion.div whileHover={{ scale: 1.02 }} transition={{ duration: 0.5 }} style={{ width: '100%', cursor: 'zoom-in', borderRadius: '4px', overflow: 'hidden' }}>
+                    <img
+                        src="/UI UX/Yellow and Pink Gradient Simple Abstract Mobile Apps Presentation/12.png"
+                        alt="Screen 12"
+                        style={{ width: '100%', display: 'block' }}
+                    />
+                </motion.div>
+            </div>
+
+            {/* 8. Row of 2 Images */}
+            {[13, 14].map((num) => (
+                <div key={num} style={{ gridColumn: 'span 6', marginBottom: '3rem' }} onClick={() => setSelectedImage(`/UI UX/Yellow and Pink Gradient Simple Abstract Mobile Apps Presentation/${num}.png`)}>
+                    <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.5 }} style={{ width: '100%', height: '100%', cursor: 'zoom-in', borderRadius: '4px', overflow: 'hidden' }}>
+                        <img
+                            src={`/UI UX/Yellow and Pink Gradient Simple Abstract Mobile Apps Presentation/${num}.png`}
+                            alt={`Screen ${num}`}
+                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                        />
+                    </motion.div>
+                </div>
+            ))}
+
+            {/* Figma Prototype */}
+            <div style={{ gridColumn: 'span 12', textAlign: 'center', padding: '4rem', background: '#1a1a1a', borderRadius: '8px', marginTop: '2rem' }}>
                 <h3 style={{ marginBottom: '2rem' }}>Interactive Prototype</h3>
                 <a
                     href="https://www.figma.com/proto/020LiJZV3aNtAnZpHaiaYq/Untitled?node-id=28-529&starting-point-node-id=28%3A529&t=Y8ImlurlAFKgGqoO-1"
@@ -30,35 +127,6 @@ const UIUX = () => {
                 >
                     View Figma Prototype
                 </a>
-            </div>
-
-            <div style={{ gridColumn: 'span 12' }}>
-                <h3 style={{ marginBottom: '2rem' }}>Process & Screens</h3>
-
-                {/* Masonry Grid */}
-                <div style={{ columns: '3 300px', gap: '20px' }}>
-                    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23].map((num) => (
-                        <div
-                            key={num}
-                            onClick={() => setSelectedImage(`/UI UX/Yellow and Pink Gradient Simple Abstract Mobile Apps Presentation/${num}.png`)}
-                            style={{
-                                marginBottom: '20px',
-                                breakInside: 'avoid',
-                                borderRadius: '8px',
-                                overflow: 'hidden',
-                                cursor: 'zoom-in'
-                            }}
-                        >
-                            <img
-                                src={`/UI UX/Yellow and Pink Gradient Simple Abstract Mobile Apps Presentation/${num}.png`}
-                                alt={`Screen ${num}`}
-                                style={{ width: '100%', display: 'block', transition: 'transform 0.3s' }}
-                                onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.02)'}
-                                onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
-                            />
-                        </div>
-                    ))}
-                </div>
             </div>
 
             {/* Lightbox Modal */}

@@ -1,4 +1,5 @@
 import Navigation from './Navigation'
+import ProjectNavigation from './ProjectNavigation'
 import { motion } from 'framer-motion'
 import { Canvas } from '@react-three/fiber'
 import ScrollScene from './ScrollScene'
@@ -67,6 +68,8 @@ const ProjectLayout = ({ title, category, description, children }) => {
                     )}
                 </div>
             </main>
+
+            <ProjectNavigation />
         </div>
     )
 }

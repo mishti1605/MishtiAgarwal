@@ -12,60 +12,62 @@ const DreamStream = () => {
             category="Speculative AI Film"
             description="“Dream Stream” is a speculative AI short film based on a simple but unsettling question: What if our dreams could be streamed like entertainment?"
         >
-            <div style={{ gridColumn: 'span 12' }}>
+            {/* 1. Main Large Visual */}
+            <div style={{ gridColumn: 'span 12', marginBottom: '6rem' }}>
                 <div style={{ width: '100%', aspectRatio: '16/9', background: '#000', borderRadius: '8px', overflow: 'hidden' }}>
                     <VimeoVideo videoId="1146506040" />
                 </div>
             </div>
 
-            <div style={{ gridColumn: 'span 12', marginTop: '2rem' }}>
-                <h3>Concept</h3>
-                <p style={{ color: '#ccc', lineHeight: '1.6', marginBottom: '2rem' }}>
+            {/* Concept Text - Centered & Focused */}
+            <div style={{ gridColumn: 'span 12', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', marginBottom: '8rem' }}>
+                <h3 style={{ fontSize: '1.5rem', marginBottom: '1.5rem', fontFamily: 'var(--font-heading)' }}>Concept</h3>
+                <p style={{ color: '#ccc', lineHeight: '1.8', maxWidth: '800px', fontSize: '1.1rem' }}>
                     Created using Flow AI, this film explores a future where people broadcast their subconscious on OTT platforms for attention and income. But there's a catch: if a dream goes unwatched for 30 days, the dreamer becomes trapped inside it forever.
                 </p>
-                <p style={{ color: '#ccc', lineHeight: '1.6' }}>
+                <p style={{ color: '#ccc', lineHeight: '1.8', maxWidth: '800px', fontSize: '1.1rem', marginTop: '1rem' }}>
                     The film blends surreal AI-generated visuals, narrative design, and ethical speculation to explore the tension between creative freedom and entertainment capitalism.
                 </p>
             </div>
 
-            {/* Process / Gallery */}
-            <div style={{ gridColumn: 'span 12', marginTop: '4rem', marginBottom: '2rem' }}>
-                <h3 style={{ fontSize: '2rem', borderBottom: '1px solid #333', paddingBottom: '1rem' }}>Process & Development</h3>
+            {/* 2. Row of 3 Smaller Images */}
+            <div style={{ gridColumn: 'span 4', cursor: 'zoom-in', marginBottom: '3rem' }} onClick={() => setSelectedImage("/Speculative AI/dream stream Poster 2.jpeg")}>
+                <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.5 }} style={{ width: '100%', height: '100%', borderRadius: '4px', overflow: 'hidden' }}>
+                    <img src="/Speculative AI/dream stream Poster 2.jpeg" alt="Poster" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </motion.div>
+            </div>
+            <div style={{ gridColumn: 'span 4', cursor: 'zoom-in', marginBottom: '3rem' }} onClick={() => setSelectedImage("/Speculative AI/concept note.png")}>
+                <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.5 }} style={{ width: '100%', height: '100%', borderRadius: '4px', overflow: 'hidden' }}>
+                    <img src="/Speculative AI/concept note.png" alt="Concept Note" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </motion.div>
+            </div>
+            <div style={{ gridColumn: 'span 4', cursor: 'zoom-in', marginBottom: '3rem' }} onClick={() => setSelectedImage("/Speculative AI/future triangle.png")}>
+                <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.5 }} style={{ width: '100%', height: '100%', borderRadius: '4px', overflow: 'hidden' }}>
+                    <img src="/Speculative AI/future triangle.png" alt="Future Triangle" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </motion.div>
             </div>
 
-            <div style={{ gridColumn: 'span 6', cursor: 'zoom-in' }} onClick={() => setSelectedImage("/Speculative AI/dream stream Poster 2.jpeg")}>
-                <img src="/Speculative AI/dream stream Poster 2.jpeg" alt="Poster" style={{ width: '100%', borderRadius: '4px' }} />
-            </div>
-            <div style={{ gridColumn: 'span 6', cursor: 'zoom-in' }} onClick={() => setSelectedImage("/Speculative AI/concept note.png")}>
-                <img src="/Speculative AI/concept note.png" alt="Concept Note" style={{ width: '100%', borderRadius: '4px' }} />
-            </div>
-
-            <div style={{ gridColumn: 'span 4', cursor: 'zoom-in' }} onClick={() => setSelectedImage("/Speculative AI/future triangle.png")}>
-                <img src="/Speculative AI/future triangle.png" alt="Future Triangle" style={{ width: '100%', borderRadius: '4px' }} />
-            </div>
-            <div style={{ gridColumn: 'span 4', cursor: 'zoom-in' }} onClick={() => setSelectedImage("/Speculative AI/FUTURE WHEEL.jpg")}>
-                <img src="/Speculative AI/FUTURE WHEEL.jpg" alt="Future Wheel" style={{ width: '100%', borderRadius: '4px' }} />
-            </div>
-            <div style={{ gridColumn: 'span 4', cursor: 'zoom-in' }} onClick={() => setSelectedImage("/Speculative AI/instructions.png")}>
-                <img src="/Speculative AI/instructions.png" alt="Instructions" style={{ width: '100%', borderRadius: '4px' }} />
+            {/* 3. Large Image */}
+            <div style={{ gridColumn: 'span 12', cursor: 'zoom-in', marginBottom: '8rem', marginTop: '4rem' }} onClick={() => setSelectedImage("/Speculative AI/FUTURE WHEEL.jpg")}>
+                <motion.div whileHover={{ scale: 1.02 }} transition={{ duration: 0.5 }} style={{ width: '100%', borderRadius: '4px', overflow: 'hidden' }}>
+                    <img src="/Speculative AI/FUTURE WHEEL.jpg" alt="Future Wheel" style={{ width: '100%', display: 'block' }} />
+                </motion.div>
             </div>
 
-            <div style={{ gridColumn: 'span 6', cursor: 'zoom-in' }} onClick={() => setSelectedImage("/Speculative AI/Gemini_Generated_Image_9ybjv09ybjv09ybj.png")}>
-                <img src="/Speculative AI/Gemini_Generated_Image_9ybjv09ybjv09ybj.png" alt="AI Generated Concept" style={{ width: '100%', borderRadius: '4px' }} />
+            {/* 4. Row of 2 Smaller Images */}
+            <div style={{ gridColumn: 'span 6', cursor: 'zoom-in', marginBottom: '3rem' }} onClick={() => setSelectedImage("/Speculative AI/instructions.png")}>
+                <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.5 }} style={{ width: '100%', height: '100%', borderRadius: '4px', overflow: 'hidden' }}>
+                    <img src="/Speculative AI/instructions.png" alt="Instructions" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </motion.div>
             </div>
-            <div style={{ gridColumn: 'span 6', cursor: 'zoom-in' }} onClick={() => setSelectedImage("/Speculative AI/IMG_9179.jpg")}>
-                <img src="/Speculative AI/IMG_9179.jpg" alt="Process Shot" style={{ width: '100%', borderRadius: '4px' }} />
-            </div>
-
-            <div style={{ gridColumn: 'span 6', cursor: 'zoom-in' }} onClick={() => setSelectedImage("/Speculative AI/Screenshot 2025-12-14 at 11.28.11 AM.png")}>
-                <img src="/Speculative AI/Screenshot 2025-12-14 at 11.28.11 AM.png" alt="Process Screenshot 1" style={{ width: '100%', borderRadius: '4px' }} />
-            </div>
-            <div style={{ gridColumn: 'span 6', cursor: 'zoom-in' }} onClick={() => setSelectedImage("/Speculative AI/Screenshot 2025-12-14 at 12.28.32 PM.png")}>
-                <img src="/Speculative AI/Screenshot 2025-12-14 at 12.28.32 PM.png" alt="Process Screenshot 2" style={{ width: '100%', borderRadius: '4px' }} />
+            <div style={{ gridColumn: 'span 6', cursor: 'zoom-in', marginBottom: '3rem' }} onClick={() => setSelectedImage("/Speculative AI/Gemini_Generated_Image_9ybjv09ybjv09ybj.png")}>
+                <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.5 }} style={{ width: '100%', height: '100%', borderRadius: '4px', overflow: 'hidden' }}>
+                    <img src="/Speculative AI/Gemini_Generated_Image_9ybjv09ybjv09ybj.png" alt="AI Concept" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </motion.div>
             </div>
 
-            <div style={{ gridColumn: 'span 12', marginTop: '2rem' }}>
-                <h4 style={{ marginBottom: '1rem', color: '#888' }}>A sneak peek inside Oculus</h4>
+            {/* 5. Main Video/Large Visual */}
+            <div style={{ gridColumn: 'span 12', marginTop: '4rem' }}>
                 <div style={{ width: '100%', aspectRatio: '16/9', background: '#111', borderRadius: '8px', overflow: 'hidden' }}>
                     <video
                         src="/Speculative AI/b348af1eccf14cb5bc71801eb5893248.mov"
@@ -73,6 +75,7 @@ const DreamStream = () => {
                         style={{ width: '100%', height: '100%' }}
                     />
                 </div>
+                <h4 style={{ marginTop: '1rem', color: '#666', textAlign: 'center', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px' }}>Inside Oculus</h4>
             </div>
 
             {/* Lightbox Modal */}

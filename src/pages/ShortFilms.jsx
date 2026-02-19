@@ -15,7 +15,7 @@ const ShortFilms = () => {
             description="My short films are little windows into the worlds I imagine — sometimes quiet, sometimes intense, sometimes just beautifully strange. These projects are my playground for experimenting with narrative, mood, and visual rhythm."
         >
             {films.map((film, index) => (
-                <div key={index} style={{ gridColumn: 'span 12', marginBottom: '4rem' }}>
+                <div key={index} style={{ gridColumn: 'span 12', marginBottom: '8rem' }}>
                     <div style={{
                         width: '100%',
                         aspectRatio: '16/9',
