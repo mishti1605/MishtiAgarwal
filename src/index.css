@@ -325,6 +325,61 @@ h6 {
 }
 
 /* ─────────────────────────────────────────────
+   MOBILE HEADER COMPONENT STYLES
+───────────────────────────────────────────── */
+.mobile-menu-btn {
+  display: none;
+  /* Hidden on desktop */
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: flex-end;
+  cursor: pointer;
+  z-index: 101;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.hamburger {
+  position: relative;
+  width: 26px;
+  height: 2px;
+  background: #fff;
+  transition: background 0.2s ease-out;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 26px;
+  height: 2px;
+  background: #fff;
+  transition: transform 0.3s ease-out;
+}
+
+.hamburger::before {
+  transform: translateY(-8px);
+}
+
+.hamburger::after {
+  transform: translateY(8px);
+}
+
+.hamburger.open {
+  background: transparent;
+  /* Top bun / middle bun hide */
+}
+
+.hamburger.open::before {
+  transform: translateY(0) rotate(45deg);
+}
+
+.hamburger.open::after {
+  transform: translateY(0) rotate(-45deg);
+}
+
+/* ─────────────────────────────────────────────
    GLOBAL MOBILE FIXES (Added for Layout Correction)
 ───────────────────────────────────────────── */
 @media (max-width: 768px) {
@@ -340,7 +395,13 @@ h6 {
   }
 
   .nav-links {
-    gap: 1.25rem !important;
+    display: none !important;
+    /* Hide desktop links */
+  }
+
+  .mobile-menu-btn {
+    display: flex !important;
+    /* Show hamburger container */
   }
 
   .nav-link {

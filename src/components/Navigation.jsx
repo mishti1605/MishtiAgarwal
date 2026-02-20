@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 
 const Navigation = () => {
@@ -32,18 +32,21 @@ const Navigation = () => {
                 <Link
                     className="nav-logo"
                     to="/"
+                    onClick={() => setIsOpen(false)}
                     style={{
                         color: '#fff',
                         textDecoration: 'none',
                         textTransform: 'uppercase',
                         fontWeight: 'bold',
-                        letterSpacing: '1px'
+                        letterSpacing: '1px',
+                        zIndex: 101, /* Ensure logo stays above overlay if needed */
+                        position: 'relative'
                     }}
                 >
                     Mishti Agarwal
                 </Link>
 
-                {/* Menu items on the right */}
+                {/* Desktop Menu items (hidden on mobile via CSS) */}
                 <div className="nav-links" style={{ display: 'flex', gap: '3rem' }}>
                     {links.map((link) => (
                         <Link
@@ -76,7 +79,65 @@ const Navigation = () => {
                         </Link>
                     ))}
                 </div>
+
+                {/* Mobile Hamburger Button (hidden on desktop via CSS) */}
+                <div
+                    className="mobile-menu-btn"
+                    onClick={() => setIsOpen(!isOpen)}
+                >
+                    <div className={`hamburger ${isOpen ? 'open' : ''}`} />
+                </div>
             </nav>
+
+            {/* Mobile Menu Overlay */}
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        className="mobile-menu-overlay"
+                        initial={{ opacity: 0, y: '-10px' }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: '-10px' }}
+                        transition={{ duration: 0.3, ease: 'easeOut' }}
+                        style={{
+                            position: 'fixed',
+                            top: 0,
+                            left: 0,
+                            right: 0,
+                            bottom: 0,
+                            background: '#0a0a0a',
+                            zIndex: 99,
+                            display: 'flex',
+                            flexDirection: 'column',
+                            justifyContent: 'center',
+                            alignItems: 'center'
+                        }}
+                        onClick={() => setIsOpen(false)} // Close if tapped outside (entire overlay)
+                    >
+                        <div
+                            style={{ display: 'flex', flexDirection: 'column', gap: '3rem', alignItems: 'center' }}
+                            onClick={(e) => e.stopPropagation()} // Prevent close when tapping the container itself
+                        >
+                            {links.map((link) => (
+                                <Link
+                                    key={link.name}
+                                    to={link.path}
+                                    onClick={() => setIsOpen(false)}
+                                    style={{
+                                        color: location.pathname === link.path ? '#8a0000' : '#fff',
+                                        textDecoration: 'none',
+                                        textTransform: 'uppercase',
+                                        fontWeight: 'bold',
+                                        letterSpacing: '3px',
+                                        fontSize: '2rem'
+                                    }}
+                                >
+                                    {link.name}
+                                </Link>
+                            ))}
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </>
     )
 }
