@@ -323,3 +323,119 @@ h6 {
     padding: 0 20px 40px;
   }
 }
+
+/* ─────────────────────────────────────────────
+   GLOBAL MOBILE FIXES (Added for Layout Correction)
+───────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+  /* 1) Header Spacing */
+  .main-nav {
+    padding: 1.25rem 1.5rem !important;
+  }
+
+  .nav-logo {
+    font-size: 0.95rem !important;
+    white-space: nowrap;
+  }
+
+  .nav-links {
+    gap: 1.25rem !important;
+  }
+
+  .nav-link {
+    font-size: 0.75rem !important;
+  }
+
+  /* 2) Process / Supporting Images inside Projects */
+  .project-main {
+    padding: 6rem 16px 2rem !important;
+    /* Top padding clears the header */
+  }
+
+  .project-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+  }
+
+  /* Force children to take full width and stack */
+  .project-grid>div>div {
+    grid-column: span 12 !important;
+    width: 100% !important;
+    margin-bottom: 1.5rem !important;
+    /* Remove excessive desktop margins */
+  }
+
+  /* 3) About Section */
+  .about-section {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 6rem 20px 0 !important;
+    /* clear header blur */
+    align-items: flex-start !important;
+    min-height: auto !important;
+  }
+
+  .about-text-content {
+    width: 100% !important;
+    text-align: left !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .about-title {
+    font-size: 2.8rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .about-text-lines {
+    padding-left: 1rem !important;
+    font-size: 0.95rem !important;
+  }
+
+  .about-canvas-wrapper {
+    height: 50vh !important;
+    width: 100% !important;
+    position: relative !important;
+  }
+
+  /* 4) Project Navigation */
+  .project-nav-wrapper {
+    padding: 2rem 1rem !important;
+  }
+
+  .project-nav-container {
+    gap: 0.5rem !important;
+  }
+
+  .project-nav-item {
+    font-size: 0.7rem !important;
+  }
+
+  .project-nav-item .project-nav-title {
+    font-size: 0.85rem !important;
+  }
+
+  .project-nav-thumb {
+    display: none !important;
+    /* Hide thumbnails on mobile to fit 1 row */
+  }
+
+  .project-nav-btn {
+    padding: 0.6rem 1rem !important;
+    font-size: 0.7rem !important;
+  }
+
+  .project-nav-label {
+    font-size: 0.6rem !important;
+  }
+
+  /* 5) Typography & 6) Spacing system */
+  h1 {
+    font-size: clamp(2.2rem, 8vw, 5rem) !important;
+  }
+
+  p {
+    font-size: 1rem !important;
+  }
+}

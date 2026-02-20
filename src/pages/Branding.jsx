@@ -34,6 +34,19 @@ const Branding = () => {
                 </p>
             </div>
 
+            {/* Row of 2 Images */}
+            {['7.jpg', '9.jpg'].map((fileName) => (
+                <div key={fileName} style={{ gridColumn: 'span 6', marginBottom: '3rem' }} onClick={() => setSelectedImage(`/Brand Identity/BR/${fileName}`)}>
+                    <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.5 }} style={{ width: '100%', height: '100%', cursor: 'zoom-in', borderRadius: '4px', overflow: 'hidden' }}>
+                        <img
+                            src={`/Brand Identity/BR/${fileName}`}
+                            alt={fileName}
+                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                        />
+                    </motion.div>
+                </div>
+            ))}
+
             {/* 3. Row of 3 Images */}
             {['17.jpg', '18.jpg', '19.jpg'].map((fileName) => (
                 <div key={fileName} style={{ gridColumn: 'span 4', marginBottom: '3rem' }} onClick={() => setSelectedImage(`/Brand Identity/BR/${fileName}`)}>
@@ -118,6 +131,102 @@ const Branding = () => {
                     </motion.div>
                 </div>
             ))}
+
+            {/* Row of 2 Images */}
+            {['31.jpg', '32.jpg'].map((fileName) => (
+                <div key={fileName} style={{ gridColumn: 'span 6', marginBottom: '3rem' }} onClick={() => setSelectedImage(`/Brand Identity/BR/${fileName}`)}>
+                    <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.5 }} style={{ width: '100%', height: '100%', cursor: 'zoom-in', borderRadius: '4px', overflow: 'hidden' }}>
+                        <img
+                            src={`/Brand Identity/BR/${fileName}`}
+                            alt={fileName}
+                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                        />
+                    </motion.div>
+                </div>
+            ))}
+
+            {/* Large Image */}
+            <div style={{ gridColumn: 'span 12', marginTop: '6rem', marginBottom: '8rem' }} onClick={() => setSelectedImage('/Brand Identity/BR/34.jpg')}>
+                <motion.div whileHover={{ scale: 1.02 }} transition={{ duration: 0.5 }} style={{ width: '100%', cursor: 'zoom-in', borderRadius: '4px', overflow: 'hidden' }}>
+                    <img
+                        src="/Brand Identity/BR/34.jpg"
+                        alt="34.jpg"
+                        style={{ width: '100%', display: 'block' }}
+                    />
+                </motion.div>
+            </div>
+
+            {/* Row of 3 Images */}
+            {['36.jpg', '37.jpg', '38.jpg'].map((fileName) => (
+                <div key={fileName} style={{ gridColumn: 'span 4', marginBottom: '3rem' }} onClick={() => setSelectedImage(`/Brand Identity/BR/${fileName}`)}>
+                    <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.5 }} style={{ width: '100%', height: '100%', cursor: 'zoom-in', borderRadius: '4px', overflow: 'hidden' }}>
+                        <img
+                            src={`/Brand Identity/BR/${fileName}`}
+                            alt={fileName}
+                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                        />
+                    </motion.div>
+                </div>
+            ))}
+
+            {/* Large Image */}
+            <div style={{ gridColumn: 'span 12', marginTop: '6rem', marginBottom: '8rem' }} onClick={() => setSelectedImage('/Brand Identity/BR/40.jpg')}>
+                <motion.div whileHover={{ scale: 1.02 }} transition={{ duration: 0.5 }} style={{ width: '100%', cursor: 'zoom-in', borderRadius: '4px', overflow: 'hidden' }}>
+                    <img
+                        src="/Brand Identity/BR/40.jpg"
+                        alt="40.jpg"
+                        style={{ width: '100%', display: 'block' }}
+                    />
+                </motion.div>
+            </div>
+
+            {/* Row of 2 Images */}
+            {['41.jpg', '42.jpg'].map((fileName) => (
+                <div key={fileName} style={{ gridColumn: 'span 6', marginBottom: '3rem' }} onClick={() => setSelectedImage(`/Brand Identity/BR/${fileName}`)}>
+                    <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.5 }} style={{ width: '100%', height: '100%', cursor: 'zoom-in', borderRadius: '4px', overflow: 'hidden' }}>
+                        <img
+                            src={`/Brand Identity/BR/${fileName}`}
+                            alt={fileName}
+                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                        />
+                    </motion.div>
+                </div>
+            ))}
+
+            {/* Row of 3 Images */}
+            {['43.jpg', '44.jpg', '45.jpg'].map((fileName) => (
+                <div key={fileName} style={{ gridColumn: 'span 4', marginBottom: '3rem' }} onClick={() => setSelectedImage(`/Brand Identity/BR/${fileName}`)}>
+                    <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.5 }} style={{ width: '100%', height: '100%', cursor: 'zoom-in', borderRadius: '4px', overflow: 'hidden' }}>
+                        <img
+                            src={`/Brand Identity/BR/${fileName}`}
+                            alt={fileName}
+                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                        />
+                    </motion.div>
+                </div>
+            ))}
+
+            {/* Large Image */}
+            <div style={{ gridColumn: 'span 12', marginTop: '6rem', marginBottom: '8rem' }} onClick={() => setSelectedImage('/Brand Identity/BR/46.jpg')}>
+                <motion.div whileHover={{ scale: 1.02 }} transition={{ duration: 0.5 }} style={{ width: '100%', cursor: 'zoom-in', borderRadius: '4px', overflow: 'hidden' }}>
+                    <img
+                        src="/Brand Identity/BR/46.jpg"
+                        alt="46.jpg"
+                        style={{ width: '100%', display: 'block' }}
+                    />
+                </motion.div>
+            </div>
+
+            {/* Large Image */}
+            <div style={{ gridColumn: 'span 12', marginTop: '6rem', marginBottom: '8rem' }} onClick={() => setSelectedImage('/Brand Identity/BR/47.jpg')}>
+                <motion.div whileHover={{ scale: 1.02 }} transition={{ duration: 0.5 }} style={{ width: '100%', cursor: 'zoom-in', borderRadius: '4px', overflow: 'hidden' }}>
+                    <img
+                        src="/Brand Identity/BR/47.jpg"
+                        alt="47.jpg"
+                        style={{ width: '100%', display: 'block' }}
+                    />
+                </motion.div>
+            </div>
 
             {/* Lightbox Modal */}
             <AnimatePresence>

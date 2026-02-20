@@ -15,7 +15,7 @@ const Navigation = () => {
     return (
         <>
             {/* Desktop / Persistent Nav */}
-            <nav style={{
+            <nav className="main-nav" style={{
                 position: 'fixed',
                 top: 0,
                 left: 0,
@@ -30,6 +30,7 @@ const Navigation = () => {
             }}>
                 {/* Name/Logo on the left */}
                 <Link
+                    className="nav-logo"
                     to="/"
                     style={{
                         color: '#fff',
@@ -43,9 +44,10 @@ const Navigation = () => {
                 </Link>
 
                 {/* Menu items on the right */}
-                <div style={{ display: 'flex', gap: '3rem' }}>
+                <div className="nav-links" style={{ display: 'flex', gap: '3rem' }}>
                     {links.map((link) => (
                         <Link
+                            className="nav-link"
                             key={link.name}
                             to={link.path}
                             style={{

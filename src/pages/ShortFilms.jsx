@@ -1,9 +1,10 @@
 import ProjectLayout from '../components/ProjectLayout'
 import VimeoVideo from '../components/VimeoVideo'
+import SmartVideo from '../components/SmartVideo'
 
 const ShortFilms = () => {
     const films = [
-        { title: "CHHAAP", vimeoId: null, genre: "Narrative", year: "2025", note: "Upload pending" },
+        { title: "CHHAAP", vimeoId: null, src: "/Shortfilms/Your paragraph text 2.mp4", genre: "Narrative", year: "2025" },
         { title: "The Elephant In the Room", vimeoId: "1146505662", genre: "Storytelling", year: "2025" },
         { title: "JAAGO", vimeoId: "1146506522", genre: "Experimental", year: "2025" }
     ]
@@ -26,6 +27,8 @@ const ShortFilms = () => {
                     }}>
                         {film.vimeoId ? (
                             <VimeoVideo videoId={film.vimeoId} />
+                        ) : film.src ? (
+                            <SmartVideo src={film.src} style={{ width: '100%', height: '100%' }} />
                         ) : (
                             <div style={{
                                 display: 'flex',

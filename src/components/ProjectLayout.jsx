@@ -23,7 +23,7 @@ const ProjectLayout = ({ title, category, description, children }) => {
                 </Canvas>
             </div>
 
-            <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '8rem 2rem 4rem', position: 'relative', zIndex: 1 }}>
+            <main className="project-main" style={{ maxWidth: '1200px', margin: '0 auto', padding: '8rem 2rem 4rem', position: 'relative', zIndex: 1 }}>
                 <motion.header
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}

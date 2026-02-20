@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 
@@ -71,6 +71,42 @@ const ProjectCarousel = ({ projects }) => {
     const goPrev = () => setActive(wrap(active - 1))
     const goNext = () => setActive(wrap(active + 1))
 
+    // Navigation event handlers (wheel, touch/swipe)
+    const touchStart = useRef(null)
+    const lastWheelTime = useRef(0)
+
+    const handleTouchStart = (e) => {
+        touchStart.current = { x: e.touches[0].clientX, y: e.touches[0].clientY }
+    }
+
+    const handleTouchEnd = (e) => {
+        if (!touchStart.current) return
+        const x = e.changedTouches[0].clientX
+        const y = e.changedTouches[0].clientY
+        const diffX = touchStart.current.x - x
+        const diffY = touchStart.current.y - y
+
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
+            if (diffX > 0) goNext()
+            if (diffX < 0) goPrev()
+        }
+        touchStart.current = null
+    }
+
+    const handleWheel = (e) => {
+        const diffX = e.deltaX
+        const diffY = e.deltaY
+
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 15) {
+            const now = Date.now()
+            if (now - lastWheelTime.current > 500) { // Throttle navigation to allow animation
+                if (diffX > 0) goNext()
+                if (diffX < 0) goPrev()
+                lastWheelTime.current = now
+            }
+        }
+    }
+
     return (
         <div className="carousel-shell">
 
@@ -99,7 +135,13 @@ const ProjectCarousel = ({ projects }) => {
             </div>
 
             {/* ── Stage ─────────────────────────────────────── */}
-            <div className="carousel-stage" aria-label="Projects carousel">
+            <div
+                className="carousel-stage"
+                aria-label="Projects carousel"
+                onTouchStart={handleTouchStart}
+                onTouchEnd={handleTouchEnd}
+                onWheel={handleWheel}
+            >
                 {projects.map((project, idx) => {
                     const slot = getSlot(idx)
                     const { x, scale, rotate, opacity, zIndex, pointerEvents } = slotStyle(slot)

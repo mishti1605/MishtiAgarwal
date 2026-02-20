@@ -65,6 +65,22 @@ const DreamStream = () => {
                     <img src="/Speculative AI/Gemini_Generated_Image_9ybjv09ybjv09ybj.png" alt="AI Concept" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </motion.div>
             </div>
+            {/* Additional Process Images */}
+            <div style={{ gridColumn: 'span 4', cursor: 'zoom-in', marginBottom: '3rem' }} onClick={() => setSelectedImage("/Speculative AI/Screenshot 2025-12-14 at 11.28.11 AM.png")}>
+                <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.5 }} style={{ width: '100%', height: '100%', borderRadius: '4px', overflow: 'hidden' }}>
+                    <img src="/Speculative AI/Screenshot 2025-12-14 at 11.28.11 AM.png" alt="Process Output 1" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </motion.div>
+            </div>
+            <div style={{ gridColumn: 'span 4', cursor: 'zoom-in', marginBottom: '3rem' }} onClick={() => setSelectedImage("/Speculative AI/Screenshot 2025-12-14 at 12.28.32 PM.png")}>
+                <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.5 }} style={{ width: '100%', height: '100%', borderRadius: '4px', overflow: 'hidden' }}>
+                    <img src="/Speculative AI/Screenshot 2025-12-14 at 12.28.32 PM.png" alt="Process Output 2" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </motion.div>
+            </div>
+            <div style={{ gridColumn: 'span 4', cursor: 'zoom-in', marginBottom: '3rem' }} onClick={() => setSelectedImage("/Speculative AI/IMG_9179.jpg")}>
+                <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.5 }} style={{ width: '100%', height: '100%', borderRadius: '4px', overflow: 'hidden' }}>
+                    <img src="/Speculative AI/IMG_9179.jpg" alt="Exhibition View" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </motion.div>
+            </div>
 
             {/* 5. Main Video/Large Visual */}
             <div style={{ gridColumn: 'span 12', marginTop: '4rem' }}>
